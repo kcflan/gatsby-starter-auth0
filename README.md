@@ -12,6 +12,10 @@ Kick off your project with this default boilerplate. This starter ships with the
 
 _Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
 
+# Auth0 Gatsby Starter
+
+This is a starter application for Gatsby and Auth0 based on the Auth0 tutorial on [Securing Gatsby with Auth0](https://auth0.com/blog/securing-gatsby-with-auth0/). It is based on the [official Gatsby hello-world starter](https://github.com/gatsbyjs/gatsby-starter-hello-world).
+
 ## 🚀 Quick start
 
 1.  **Create a Gatsby site.**
@@ -89,9 +93,5 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 - **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
 
 - **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
 
 <!-- AUTO-GENERATED-CONTENT:END -->
