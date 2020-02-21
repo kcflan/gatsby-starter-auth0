@@ -8,10 +8,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
+import { useAuth } from 'react-use-auth';
 
 import Header from './header';
 import Nav from './nav';
 import './layout.css';
+
+const loadAuthenticatedApp = () => import('../components/authenticated-app');
+const AuthenticatedApp = React.lazy(loadAuthenticatedApp);
+const UnauthenticatedApp = React.lazy(() =>
+  import('../components/unauthenticated-app')
+);
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -23,9 +30,23 @@ const Layout = ({ children }) => {
       }
     }
   `);
+  // pre-load the authenticated side in the background while the user's
+  // filling out the login form.
+  React.useEffect(() => {
+    loadAuthenticatedApp();
+  }, []);
+
+  const { isAuthenticated, user } = useAuth();
 
   return (
     <>
+      <React.Suspense fallback={<>{/* spinner */}</>}>
+        {isAuthenticated() && <h1>Hi {user.email}</h1> ? (
+          <AuthenticatedApp />
+        ) : (
+          <UnauthenticatedApp />
+        )}
+      </React.Suspense>
       <Header siteTitle={data.site.siteMetadata.title} />
       <Nav />
       <div
